@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EcoTrade
+{% endblock %}
+
+{% block body %}
+
+<main>
+        <div class="bloc bloc1 bc btn btn-success" {{ button_label|default('Save') }}>
+        Type de profil</div>
+        
+        <div class="bloc bloc2 bc btn btn-success">Identité et personnalité</div>
+        
+        <!-- bloc3: impossible de mettre "<div id="resultat" class="scroller"></div>" sans tout dérégler-->
+        <!-- bloc3: "style.css" indispensable pour ne pas dérégler-->
+        <div class="bloc bloc3 bm d-flex flex-column">
+            
+            <h6>Consignes</h6>
+            <textarea cols="41" rows="2" class="order mb-2">
+                            [ Type de profil ]
+Utilisateur :
+(consommateur, communauté, mouvement social)
+Producteur :
+(horticulteur, agriculteur, éleveur/pêcheur)
+Fabricant :
+(artisanat, industrie, aménagement)
+Entrepreneur :
+(commerce, tourisme/bien-être, association)
+Chercheur :
+(sciences, journalisme, artiste)
+
+                            [ Identité ]
+Nom, âge, genre, éthnicité, confession, mensuration corporelle, traits caractéristiques, handicap, allergie,...
+Tu es une personne discriminée ou minoritaire?
+Fais transparaître ces critères: ici tu peux en es fier.
+Partage aussi tes passions et abonnements en cours,...
+
+                            [ Coordonnées ]
+Comment veux-tu être joins pour partager tes projets et tes passions?
+Attention cependant: vérifie qu'il ne s'agit pas d'une personne malveillante
+étrangement flatteuse derrière son écran.</textarea>
+
+            <h6>-- Biographie || Description || Liens --</h6>
+            <form method="post" action="{{path('home_edit_description')}}">
+		        <div>
+                    <textarea cols="41" rows="9" name="description">
+                    {% if user.description != null %}{{ user.description }}{% endif %}
+                    </textarea>
+                </div>
+                <div class="d-flex justify-content-center mt-1">
+                    <input type="submit" value="Modifier" class="btn btn-success">
+                </div>
+            </form>       
+        </div>
+        
+		<div class="bloc bloc4 bc btn btn-success">Coordonnées</div>
+           
+        <div class="bloc bloc5 bc btn btn-success">
+        <p class="d-flex justify-content-center p-3">Copie l'adresse internet<br> et partage!</p></div>
+</main>
+
+
+{% endblock %}

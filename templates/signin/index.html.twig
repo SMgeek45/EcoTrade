@@ -1,0 +1,98 @@
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Inscription{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/index.css" rel="stylesheet">
+</head>
+
+{% include 'bar.html.twig' %}
+
+{% block body %}
+<main id="log" class="mt-5">
+      <p>Nom<input type="text" name="" id="nom" required></p>
+      <p>Prénom<input type="text" name="" id="prenom" required></p>
+      <p>E-mail<input type="email" name="" id="E-mail" required></p>
+      <p>Mot de passe<input type="text" name="" id="E-mail" required></p>
+      <p><label for="Autres">Autres</label><br><textarea name="" id="" cols="30" rows="10" placeholder="Coordonnées, disponibilités, liens sites web,..." required></textarea></p>
+
+      <br>
+        <section>
+        <label for="Consommateur">Consommateur</label>
+        <input type="checkbox" name="role" id="">
+        <br>
+        <label for="">Utilisateur</label>
+        <input type="radio" name="1" id="">
+        <label for="">Communauté</label>
+        <input type="radio" name="1" id="">
+        <label for="">Mouvement social</label>
+        <input type="radio" name="1" id="">
+        <br>
+        <textarea placeholder="Dis-nous en plus pour être mieux référencé." minlength="50" cols="36"></textarea>
+        <br>
+        <br>
+        </section>
+        <section id="pa">
+          <label for="Agriculteur">Production agricole</label>
+          <input type="checkbox" name="role" id="Agriculteur">
+          <br>
+          <label for="">Agriculture</label>
+          <input type="radio" name="2" id="">
+          <label for="">Horticulture</label>
+          <input type="radio" name="2" id="">
+          <label for="">Elevage / pêche</label>
+          <input type="radio" name="2" id="">
+          <br>
+          <textarea placeholder="Dis-nous en plus pour être mieux référencé." minlength="50" cols="36"></textarea>
+          <br>
+        </section>
+        <br>
+        <section id="fab">
+          <label for="Fabricant">Fabricant</label>
+          <input type="checkbox" name="role" id="Fabricant">
+          <br>
+          <label for="">Textile / maroquinerie</label>
+          <input type="radio" name="3" id="">
+          <label for="">Artisanat</label>
+          <input type="radio" name="3" id="">
+          <label for="">Industrie</label>
+          <input type="radio" name="3" id="">
+          <br>
+          <textarea placeholder="Dis-nous en plus pour être mieux référencé." minlength="50" cols="36"></textarea>
+          <br>
+        </section>
+        <br>
+        <section id="ent">
+          <label for="Entrepreneur">Entrepreneur</label>
+          <input type="checkbox" name="role" id="Entrepreneur">
+          <br>
+          <label for="">Epicerie / boutique</label>
+          <input type="radio" name="4" id="">
+          <label for="">Soins du corps</label>
+          <input type="radio" name="4" id="">
+          <label for="">Tourisme</label>
+          <input type="radio" name="4" id="">
+          <br>
+          <textarea placeholder="Dis-nous en plus pour être mieux référencé." minlength="50" cols="36"></textarea>
+          <br>
+        </section>
+        <br>
+        <section id="ch">
+          <label for="Chercheur">Chercheur</label>
+          <input type="checkbox" name="role" id="Chercheur">
+          <br>
+          <label for="">Journalisme</label>
+          <input type="radio" name="5" id="">
+          <label for="">Sciences</label>
+          <input type="radio" name="5" id="">
+          <label for="">Art</label>
+          <input type="radio" name="5" id="">
+          <br>
+          <textarea placeholder="Dis-nous en plus pour être mieux référencé." minlength="50" cols="36"></textarea>
+          <br>
+        </section>
+        <section id="a">
+          <a href="{{path("auth_index")}}" class="btn btn-success my-4">S'inscrire</a>
+        </section>
+    </main>
+{% endblock %}
